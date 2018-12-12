@@ -1,5 +1,7 @@
 package com.ulatina.servicios;
 
+import java.util.List;
+
 import com.ulatina.entidades.Persona;
 import com.ulatina.util.HibernateUtil;
 
@@ -24,6 +26,19 @@ public class ServicioPersona extends HibernateUtil {
 				.getSingleResult();
 		return persona;
 	}
+	
+	public List<Persona> getListaPersona() {
+		String jpql = "SELECT t FROM " + Persona.class.getSimpleName() + " t";
+		List<Persona> listaPersona = em.createQuery(jpql, Persona.class).getResultList();
+		if (listaPersona != null) {
+			System.out.println("Lista encontrada");
+			return listaPersona;
+		} else {
+			System.out.println("Lista no encontrada");
+			return null;
+		}
+	}
+
 	
 	public Persona buscarPorCorreo(String correo) throws Exception {
 		Persona persona = (Persona) super.getEm().createNamedQuery("Persona.findByCorreo").setParameter("correo", new String(correo))

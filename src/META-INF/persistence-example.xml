@@ -12,7 +12,7 @@
 		<class>com.ulatina.entidades.Rol</class>
 		<class>com.ulatina.entidades.ListaBot</class>
 		<properties>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/red-social"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/bd"/>
 			<property name="javax.persistence.jdbc.user" value="usuario"/>
 			<property name="javax.persistence.jdbc.password" value="contraseña"/>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>

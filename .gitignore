@@ -23,4 +23,8 @@ dist/
 nbdist/
 .nb-gradle/
 
+### MacOS generated
 .DS_Store
+
+###Persistence
+src/META-INF/persistence.xml

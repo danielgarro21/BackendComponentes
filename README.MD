@@ -9,4 +9,5 @@ Crear la conexión en eclipse
 
 ### Modificar el Persistence XML
 
-Cambiar los datos de conexión en el Persistence.xml
+Crear persistence.xml en src/META-INF, usar datos del persistence-example.xml como guia para configurar su persistence.xml
+No modificar el example a menos que se agregue algo que no estaba en él

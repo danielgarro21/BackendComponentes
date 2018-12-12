@@ -10,7 +10,25 @@ import java.util.List;
  * 
  */
 @Entity
-@NamedQuery(name="Correo.findAll", query="SELECT c FROM Correo c")
+@NamedQueries(value = {
+		@NamedQuery(name="Correo.findAll", query="SELECT c FROM Correo c"),
+		@NamedQuery(
+				name = "Correo.findAllCorreo", 
+				query = "SELECT d FROM Correo d WHERE d.correo LIKE :tituloParam ORDER BY d.correo"),
+		@NamedQuery(name="Correo.findByPrimaryKey",
+        query="SELECT e FROM Correo e WHERE e.idCorreo = :id"),
+})
+
+@NamedNativeQueries({
+	@NamedNativeQuery(
+			name="Correo.findAllSQL", 
+			query="SELECT id, correo FROM Correo", 
+			resultClass=Correo.class), 
+	@NamedNativeQuery(
+			name="Correo.findAllSQLWithParam", 
+			query="SELECT * FROM Correo WHERE nombre LIKE :correoParam ORDER BY correo", 
+			resultClass=Correo.class)			
+})
 public class Correo implements Serializable {
 	private static final long serialVersionUID = 1L;
 

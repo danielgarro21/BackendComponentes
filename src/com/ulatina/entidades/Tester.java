@@ -12,8 +12,8 @@ public class Tester {
 			//Codigo para actualizar Rol
 			ServicioRol sr = new ServicioRol();
 			ServicioPersona sp = new ServicioPersona();
-			sp.getEntityManager();
 			sr.getEntityManager();
+			sp.getEntityManager();
 			Rol rol = sr.buscarPorId(3);
 			
 			Persona persona = new Persona();
@@ -30,6 +30,7 @@ public class Tester {
 			Persona resultadoPersona = sp.buscarPorCorreo("jean@example.com");
 			System.out.println("La persona buscada es: "+resultadoPersona.getNombre());
 			System.out.println("El rol buscado es: "+rol.getNombre());
+			sp.stopEntityManagerFactory();
 
 			
 		} catch (

@@ -32,7 +32,7 @@ public class ServicioPublicacion extends HibernateUtil {
 		return publicacion;
 	}
 	
-	public List<Publicacion> getListaRol() {
+	public List<Publicacion> getListaPublicacion() {
 		String jpql = "SELECT t FROM " + Publicacion.class.getSimpleName() + " t";
 		List<Publicacion> listaPublicacion = em.createQuery(jpql, Publicacion.class).getResultList();
 		if (listaPublicacion != null) {
